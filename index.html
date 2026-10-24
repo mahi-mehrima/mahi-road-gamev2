@@ -6,13 +6,13 @@
 <!--/HEAD-->
 <title>মাহি ভাইয়ের রোড রাশ · No Brake: Mahi Edition</title>
 <meta name="description" content="ঢাকার রাস্তায় ব্যাটারির অটো চালান, ধাক্কা মারেন, জাতীয় ক্ষতি বাড়ান, আর পাবলিক ধরার আগে পালান। ফ্রি, ব্রাউজারেই চলে, ফোনেও।">
-<meta name="author" content="এস. কে. আব্দুর রহমান (মাহি)">
+<meta name="author" content="Omar Faruqe Riyad">
 <meta name="theme-color" content="#15110e">
 <link rel="canonical" href="https://baper-rasta.pages.dev/">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/favicon.ecd6bb7b2b.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.9ff36d6707.png">
-<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Mahir No Brake: Mahi Edition">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="No Brake: Mahi Edition">
 <meta property="og:type" content="website"><meta property="og:site_name" content="মাহি ভাইয়ের রোড রাশ"><meta property="og:locale" content="bn_BD">
 <meta property="og:title" content="মাহি ভাইয়ের রোড রাশ: রাস্তা কি আপনার বাপের?"><meta property="og:description" content="ঢাকার রাস্তায় ব্যাটারির অটো চালান, ধাক্কা মারেন, জাতীয় ক্ষতি বাড়ান, আর পাবলিক ধরার আগে পালান। ফ্রি, ব্রাউজারেই চলে, ফোনেও।">
 <meta property="og:url" content="https://baper-rasta.pages.dev/"><meta property="og:image" content="https://baper-rasta.pages.dev/og.jpg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -345,7 +345,7 @@ h1.title { font-family: var(--f-display); font-weight: 800; font-size: clamp(52p
 .np-actions .share { font-family: var(--f-display); font-weight: 800; font-size: 22px; line-height: 1; min-height: 48px; padding: 12px 18px 8px; border: 3px solid var(--ink);
   border-radius: 12px; background: transparent; color: var(--ink); cursor: pointer; }
 .np-actions .share:active { transform: translateY(2px); }
-/* রত্না নিউজ ডটকম (RotnaNews.com)'s list (SUBSCRIBE): a quiet line under the paper's record, and a subscription coupon
+/* দৈনিক যানজট's list (SUBSCRIBE): a quiet line under the paper's record, and a subscription coupon
    over everything. Text fields need their own user-select: the game turns selection off, and iPhones then refuse typing. */
 .linkish { padding: 0; border: 0; background: none; font: inherit; font-weight: 700; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
 .np-subline { flex-basis: 100%; margin: -4px 0 0; font-family: var(--f-ui); font-size: 14px; line-height: 1.4; } /* under the record, not in the paper */
@@ -378,7 +378,14 @@ h1.title { font-family: var(--f-display); font-weight: 800; font-size: clamp(52p
 .sub-x:focus-visible, .linkish:focus-visible { outline: 3px solid var(--led-cyan); outline-offset: 2px; }
 /* মোস্ট ওয়ান্টেড (WANTED): a small poster tag in the menu's top corner, a line on the paper beside the list's offer,
    and the board itself as a police wanted poster over everything */
-.wanted-tag { position: absolute; right: 14px; top: calc(env(safe-area-inset-top, 0px) + 14px); min-height: 40px; padding: 8px 14px 5px; border: 2px solid var(--ink);
+/* the menu's top corner: the game's Facebook page (the owner's, 23 October 2026) and মোস্ট ওয়ান্টেড, side by side */
+.menu-corner { position: absolute; right: 14px; top: calc(env(safe-area-inset-top, 0px) + 14px); display: flex; align-items: center; gap: 10px; }
+.fb-page { display: grid; place-items: center; width: 40px; height: 40px; box-sizing: border-box; border: 2px solid var(--ink); border-radius: 50%; background: #1877f2; color: #fff;
+  box-shadow: 0 4px 0 rgba(0, 0, 0, .35); }
+.fb-page svg { width: 22px; height: 22px; fill: currentColor; }
+.fb-page:active { transform: translateY(2px); }
+.fb-page:focus-visible { outline: 3px solid var(--led-cyan); outline-offset: 2px; }
+.wanted-tag { min-height: 40px; padding: 8px 14px 5px; border: 2px solid var(--ink);
   border-radius: 4px; background: var(--newsprint); color: #b3121b; font-family: var(--f-display); font-weight: 800; font-size: 16px; line-height: 1.1;
   box-shadow: 0 4px 0 rgba(0, 0, 0, .35); transform: rotate(2deg); cursor: pointer; }
 .wanted-tag:active { transform: rotate(2deg) translateY(2px); }
@@ -675,7 +682,7 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
   <div id="hud" hidden>
     <div class="hud-top">
       <div id="lossBox">
-        <div class="lbl">দেশের পাছা মারা<span id="target" hidden></span></div>
+        <div class="lbl">জাতীয় ক্ষতি<span id="target" hidden></span></div>
         <div class="loss-row"><div id="loss">৳০</div><div id="combo" hidden>×২</div></div>
       </div>
       <div id="battBox">
@@ -733,7 +740,7 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
       </div>
       <details class="help" id="help" open><summary>কীভাবে খেলবেন</summary>
         <ul class="rules">
-          <li><b class="ic">💥</b><span><strong>ধাক্কা দেন</strong>গাড়ি, বাইক, দোকান: যত ভাঙবেন, তত দেশের পাছা মারা</span></li>
+          <li><b class="ic">💥</b><span><strong>ধাক্কা দেন</strong>গাড়ি, বাইক, দোকান: যত ভাঙবেন, তত জাতীয় ক্ষতি</span></li>
           <li><b class="ic bus">🚌</b><span><strong>বাস-ট্রাক ছুঁলেই শেষ</strong>নিচে লাল আলো মানে দূরে থাকেন</span></li>
           <li><b class="ic">🏃</b><span><strong>পাবলিক দৌড়াবে</strong>ধরতে পারলে ধোলাই, তার আগেই পালান</span></li>
           <li><b class="ic volt">⚡</b><span><strong>চার্জ শেষ?</strong>হলুদ দাগে থামেন, লাইন সরাসরি মেইন থেকে</span></li>
@@ -743,22 +750,22 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
         <p class="keys-note" id="keysNote">কিছু কিবোর্ড ↑ + ← + Space একসাথে ধরতে পারে না। তখন Space-এর বদলে ডান Shift চাপেন, অথবা ↑ ছেড়ে শুধু Space ধরেন: টান দিলে অটো এমনিই চলে।</p>
       </details>
     </div>
-    <button class="wanted-tag" id="wantedOpen" type="button" hidden>মোস্ট মাতাল চালক</button>
-    <a class="credit" href="about.html" target="_blank" rel="noopener" lang="en">Made by SK Abdur Rahman ( Mahi )<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a>
+    <div class="menu-corner"><a class="fb-page" href="https://www.facebook.com/baperrastagame" target="_blank" rel="noopener" aria-label="মাহি ভাইয়ের রোড রাশ, ফেসবুক পেজ" title="মাহি ভাইয়ের রোড রাশ, ফেসবুক পেজ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.6 21v-7.2h2.5l.4-3h-2.9V8.9c0-.9.3-1.5 1.5-1.5h1.5V4.7a19 19 0 0 0-2.2-.1c-2.2 0-3.7 1.3-3.7 3.8v2.4H8.3v3h2.4V21z"/></svg></a><button class="wanted-tag" id="wantedOpen" type="button" hidden>মোস্ট ওয়ান্টেড</button></div>
+    <a class="credit" href="about.html" target="_blank" rel="noopener" lang="en">Made by SK Abdur Rahman (Mahi)<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a>
   </div>
 
   <div id="paper" hidden>
     <article class="np" aria-live="polite">
       <div class="np-scroll">
       <header>
-        <div class="np-mast"><p class="np-ear"><small>যানজট</small><b>১০/১০</b></p><div class="np-name">রত্না নিউজ ডটকম (RotnaNews.com)f</div><p class="np-ear"><small>বায়ুমান</small><b>অস্বাস্থ্যকর</b></p></div>
-        <div class="np-meta"><span id="npDate"></span><span>জ্যামে আটকে থাকা মাগি বাজ মানুষের কণ্ঠস্বর</span><span>মূল্য: ১০ টাকা</span></div>
+        <div class="np-mast"><p class="np-ear"><small>যানজট</small><b>১০/১০</b></p><div class="np-name">রত্না নিউজ ডটকম (RotnaNews.com)</div><p class="np-ear"><small>বায়ুমান</small><b>অস্বাস্থ্যকর</b></p></div>
+        <div class="np-meta"><span id="npDate"></span><span>জ্যামে আটকে থাকা মানুষের কণ্ঠস্বর</span><span>মূল্য: ১০ টাকা</span></div>
       </header>
       <p class="np-kicker">শীর্ষ সংবাদ</p>
       <h2 id="npHead"></h2>
       <div class="np-body">
         <div class="np-left">
-          <figure><div class="np-photo"><img id="npPhoto" alt="ঘটনাস্থলের ছবি"><span class="np-stamp"><small>দেশের পাছা মারা</small><b id="npStamp"></b></span></div>
+          <figure><div class="np-photo"><img id="npPhoto" alt="ঘটনাস্থলের ছবি"><span class="np-stamp"><small>জাতীয় ক্ষতি</small><b id="npStamp"></b></span></div>
             <figcaption>ঘটনাস্থলের ছবি তুলেছেন একজন পথচারী নাম রাহুল কুমার, যিনি সাহায্য না করে ভিডিও করছিলেন</figcaption></figure>
         </div>
         <div class="np-buy">
@@ -770,7 +777,7 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
           <div class="np-cols" id="npStats"></div>
         </div>
       </div>
-      <p class="np-foot">ঘটনা তদন্তে তিন সদস্যের একটি কমিটি গঠন করা হয়েছে। কমিটিকে সাত কার্যদিবসের মধ্যে প্রতিবেদন জমা দিতে বলা হয়েছে। এর আগের ১৪৩ টি কমিটির প্রতিবেদন এখনও জমা পড়েনি।</p>
+      <p class="np-foot">ঘটনা তদন্তে তিন সদস্যের একটি কমিটি গঠন করা হয়েছে। কমিটিকে সাত কার্যদিবসের মধ্যে প্রতিবেদন জমা দিতে বলা হয়েছে। এর আগের ৪১টি কমিটির প্রতিবেদন এখনও জমা পড়েনি।</p>
       <p class="np-imprint">সম্পাদক: এস. কে. আব্দুর রহমান (মাহি)</p>
       </div>
       <div class="np-actions">
@@ -782,11 +789,11 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
         <button class="share" id="shareBtn" type="button">ছবি শেয়ার</button>
         <button class="share" id="clipBtn" type="button" hidden>ভিডিও শেয়ার</button>
         </div>
-        <div class="np-record"><span class="best" id="npBest"></span><a class="np-credit np-credit-phone" href="about.html" target="_blank" rel="noopener" lang="en">Made by SK Abdur Rahman ( Mahi )<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
-        <div class="np-subline" id="npLines"><span id="npWanted" hidden><button class="linkish" id="npWantedOpen" type="button">মোস্ট মাতাল চালক তালিকা দেখুন</button></span><form class="np-name" id="npName" hidden novalidate><label class="sub-label" for="npNameIn">পোস্টারে কী নামে উঠবেন?</label><input id="npNameIn" name="name" type="text" maxlength="24" autocomplete="nickname" spellcheck="false" placeholder="পোস্টারে কী নামে উঠবেন?"><button class="np-name-go" id="npNameGo" type="submit">নাম দিন</button><span class="np-name-say" id="npNameSay" role="status" aria-live="polite"></span></form><span id="npSubLine" hidden>নতুন গেম এলে খবর চান? <button class="linkish" id="npSubOpen" type="button">সাবস্ক্রাইব করুন</button></span><a class="np-credit" href="about.html" target="_blank" rel="noopener" lang="en">Made by SK Abdur Rahman ( Mahi )<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
-        <button class="np-install" id="npInstall" type="button" hidden aria-label="হোম স্ক্রিনে রাখুন: পরের বার এক টাচে, নেট ছাড়াও" title="হোম স্ক্রিনে রাখুন: পরের বার एक टाचे, नेट छाड़ाও"><svg viewBox="0 0 24 24" aria-hidden("true"><rect x="6" y("true") width("true") height("true") rx("true")/><path d("true") M12("true") 7v7M9("true") 11l3("true") 3 3-3"/></svg><span>ইনস্টল</span></button>
-        <p class("true") np-install-how" id("true") npInstallHow" hidden>ব্রাউজারের शेर बटन (⬆) चापुन, तारपर “Add to Home Screen”। आइकन थेरे खुलले पुरो स्क्रीने चलबे।</p>
-        <p class("true") np-inapp" id("true")npInApp" hidden></p>
+        <div class="np-record"><span class="best" id="npBest"></span><a class="np-credit np-credit-phone" href="about.html" target="_blank" rel="noopener" lang="en">Made by Omar Faruqe Riyad<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
+        <div class="np-subline" id="npLines"><span id="npWanted" hidden><button class="linkish" id="npWantedOpen" type="button">মোস্ট ওয়ান্টেড তালিকা দেখুন</button></span><form class="np-name" id="npName" hidden novalidate><label class="sub-label" for="npNameIn">পোস্টারে কী নামে উঠবেন?</label><input id="npNameIn" name="name" type="text" maxlength="24" autocomplete="nickname" spellcheck="false" placeholder="পোস্টারে কী নামে উঠবেন?"><button class="np-name-go" id="npNameGo" type="submit">নাম দিন</button><span class="np-name-say" id="npNameSay" role="status" aria-live="polite"></span></form><span id="npSubLine" hidden>নতুন গেম এলে খবর চান? <button class="linkish" id="npSubOpen" type="button">সাবস্ক্রাইব করুন</button></span><a class="np-credit" href="about.html" target="_blank" rel="noopener" lang="en">Made by Omar Faruqe Riyad<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4 2h6v6M10 2 3 9"/></svg></a></div>
+        <button class="np-install" id="npInstall" type="button" hidden aria-label="হোম স্ক্রিনে রাখুন: পরের বার এক টাচে, নেট ছাড়াও" title="হোম স্ক্রিনে রাখুন: পরের বার এক টাচে, নেট ছাড়াও"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M12 7v7M9 11l3 3 3-3"/></svg><span>ইনস্টল</span></button>
+        <p class="np-install-how" id="npInstallHow" hidden>ব্রাউজারের শেয়ার বোতাম (⬆) চাপুন, তারপর “Add to Home Screen”। আইকন থেকে খুললে পুরো স্ক্রিনে চলবে।</p>
+        <p class="np-inapp" id="npInApp" hidden></p>
       </div>
     </article>
   </div>
@@ -808,8 +815,8 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
   <div id="wanted" hidden role="dialog" aria-modal="true" aria-labelledby="wTitle">
     <div class="w-card">
       <button class="sub-x" id="wClose" type="button" aria-label="বন্ধ করুন">×</button>
-      <h2 id="wTitle">মোস্ট মাতাল চালক</h2>
-      <p class="w-lead">সবচেয়ে বেশি দেশের পোঁদ মারা চালক। ধরিয়ে দিলে পুরস্কার: টাকা নাই।</p>
+      <h2 id="wTitle">মোস্ট ওয়ান্টেড</h2>
+      <p class="w-lead">সবচেয়ে বেশি জাতীয় ক্ষতি করা চালক। ধরিয়ে দিলে পুরস্কার: এক কাপ চা।</p>
       <div class="w-tabs" role="tablist"><button role="tab" id="wTabWeek" type="button" aria-selected="true">এই সপ্তাহ</button><button role="tab" id="wTabAll" type="button" aria-selected="false">সর্বকালের</button></div>
       <ol class="w-list" id="wList" aria-live="polite"></ol>
       <p class="w-me" id="wMe" hidden></p>
@@ -818,12 +825,12 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
         <div class="sub-row"><input id="wNameIn" name="name" type="text" maxlength="24" autocomplete="nickname" spellcheck="false" placeholder="যেমন: উল্টাপথের রাজা"><button class="cta" id="wNameSend" type="submit">নাম দিন</button></div>
         <p class="sub-say" id="wSay" role="status" aria-live="polite"></p>
       </form>
-      <p class="w-fine">প্রতি শনিবার রাত ১২টায় নতুন সপ্তাহ · <a href="privacy.html" target="_blank" rel="noopener">গোপনীয়তা</a></p>
+      <p class="w-fine">প্রতি শনিবার রাত ১২টায় নতুন সপ্তাহ · <a href="https://www.facebook.com/baperrastagame" target="_blank" rel="noopener">ফেসবুক পেজ</a> · <a href="privacy.html" target="_blank" rel="noopener">গোপনীয়তা</a></p>
     </div>
   </div>
   <div id="controls" hidden></div>
   <div id="ticker" hidden><span class="tag" id="tickerTag">খবর</span><div class="track"></div></div>
-  <div id="loading"><div class="ld"><i class="garland" aria-hidden="true"></i><b>মাহি ভাইয়ের রোড রাশ</b><span>একটু থাম মামা!…</span><p id="bootMsg" role="alert" hidden></p><button class="cta" id="bootRetry" type="button" hidden onclick="location.reload()">আবার চেষ্টা করুন</button><i class="garland" aria-hidden="true"></i></div></div>
+  <div id="loading"><div class="ld"><i class="garland" aria-hidden="true"></i><b>মাহি ভাইয়ের রোড রাশ</b><span>থাম মামা…</span><p id="bootMsg" role="alert" hidden></p><button class="cta" id="bootRetry" type="button" hidden onclick="location.reload()">আবার চেষ্টা করুন</button><i class="garland" aria-hidden="true"></i></div></div>
   <script>
   /* The boot guard, in plain old JavaScript so it runs where the game cannot. If the game fails to start (an error, a
      browser without WebGL or modules, a script that never arrives, or no menu after 30 s), the loading screen says so
@@ -833,8 +840,8 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
     var MSG = {
       webgl: 'এই ফোন বা ব্রাউজারে ৩ডি গ্রাফিক্স চালু নেই। Chrome বা Safari-এর নতুন সংস্করণে খুলে দেখুন।',
       old: 'ব্রাউজারটা পুরোনো, তাই গেমটা চলছে না। Chrome বা Safari আপডেট করে আবার খুলুন।',
-      net: 'গেমটা নামানো গেল না। অ্যাই নানির পুত! নেট সংযোগ দেখ আবার চেষ্টা কর।',
-      slow: 'লোড হতে অনেক সময় লাগছে। বাড়া নেট ঠিক আছে কি না দেখে আবার চেষ্টা কর।',
+      net: 'গেমটা নামানো গেল না। নেট সংযোগ দেখে আবার চেষ্টা করুন।',
+      slow: 'লোড হতে অনেক সময় লাগছে। নেট ঠিক আছে কি না দেখে আবার চেষ্টা করুন।',
       error: 'গেমটা চালু হতে গিয়ে আটকে গেছে। আবার চেষ্টা করলে সাধারণত ঠিক হয়ে যায়।',
       lost: 'ফোন গেমের গ্রাফিক্স বন্ধ করে দিয়েছে, হয়তো অনেকক্ষণ অন্য অ্যাপে ছিলেন। আবার চালু করুন।'
     };
@@ -860,6 +867,6 @@ h1.title { text-shadow: 3px 3px 0 #ae2941, 6px 6px 0 #14372f; }
   </script>
   <script nomodule>window.__bootFail && window.__bootFail('old');</script>
 </div>
-<script type="module" src="game.0a644e6737.js"></script>
+<script type="module" src="game.e163c1137c.js"></script>
 </body>
 </html>
